@@ -1,2 +1,4 @@
 # cookie-stand
-salmonn cookies
+salmon cookies
+
+This is a the week 2 project.
