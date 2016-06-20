@@ -2,6 +2,7 @@ h1 {
   text-align: center;
 }
 p #storeName {
+  display: inline;
   font-size: 20px;
   text-align: center;
 }
