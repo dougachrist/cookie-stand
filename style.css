@@ -16,3 +16,9 @@ ul {
 li {
   color: black;
 }
+
+img {
+  display: block;
+  border: 1px dashed green;
+  margin: auto;
+}
