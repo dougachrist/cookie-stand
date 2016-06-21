@@ -1,0 +1,55 @@
+* {
+  background: #e0c891;}
+h1 {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  color: #273431;}
+h3 {
+  color: #883300;
+  text-align: center;
+  font-family: cursive;}
+p {
+  color: hsla(120, 30%, 22%, 0.94);;
+  text-align: center;
+  font-family: Georgia;}
+footer {
+  text-align: center;
+  height: 200px;
+  font-family: arial;}
+ul {
+  margin: auto;
+  margin-top: 5px;
+  font-size: 15px;
+  color: blue;
+  width: 500px;}
+li {
+  color: black;
+  background:rgba(136, 51, 0, 0.28);}
+img {
+  display: block;
+  margin: auto;}
+.footNav {
+  text-align: center;}
+#scroll {
+  margin: auto;
+  margin-top:10px;
+  padding: 5px;
+  text-align: center;
+  font-family: arial;}
+#scroll li {
+  list-style-type: none;
+  display: block;
+  font-family: arial;}
+p #storeName {
+  font-size: 20px;
+  text-align: center;}
+#storeName ul {
+  text-align: left;
+  float: left;
+  list-style-type: none;}
+.footNav li {
+  text-decoration: underline;
+  text-align: center;
+  margin: 50px;
+  display: inline;
+  height: 50px;}
