@@ -1,68 +1,55 @@
 * {
-  background: #999;
-}
-
+  background: #e0c891;}
 h1 {
+  font-family: 'Lobster', cursive;
   text-align: center;
-}
-
+  color: #273431;}
 h3 {
+  color: #883300;
   text-align: center;
-  border: 1px dashed green;
-  font-family: cursive;
-}
-
+  font-family: cursive;}
 p {
+  color: hsla(120, 30%, 22%, 0.94);;
   text-align: center;
-  border: 1px dashed green;
-  font-family: arial;
-}
-
+  font-family: Georgia;}
 footer {
-  height: 100px;
-  border: 1px dashed green;
-  font-family: arial;
-}
-
-p #storeName {
-  display: inline;
-  font-size: 20px;
   text-align: center;
-}
-
+  height: 200px;
+  font-family: arial;}
 ul {
   margin: auto;
+  margin-top: 5px;
   font-size: 15px;
   color: blue;
-  width: 500px;
-}
-
+  width: 500px;}
 li {
   color: black;
-}
-
+  background:rgba(136, 51, 0, 0.28);}
 img {
   display: block;
-  border: 1px dashed green;
-  margin: auto;
-}
-
-
+  margin: auto;}
 .footNav {
-  border: 2px dashed green;
-  text-align: center;
-}
-
+  text-align: center;}
 #scroll {
-  margin: 5px;
+  margin: auto;
+  margin-top:10px;
   padding: 5px;
-  border: 2px dashed green;
   text-align: center;
-}
-
+  font-family: arial;}
+#scroll li {
+  list-style-type: none;
+  display: block;
+  font-family: arial;}
+p #storeName {
+  font-size: 20px;
+  text-align: center;}
+#storeName ul {
+  text-align: left;
+  float: left;
+  list-style-type: none;}
 .footNav li {
+  text-decoration: underline;
   text-align: center;
   margin: 50px;
   display: inline;
-  height: 50px;
-}
+  height: 50px;}

@@ -6,13 +6,10 @@ var contactsArray = ['email: fishy@phishmail.com','phone: 555-555-5555','twitter
 
 function clearData() {
   var ulElement = document.getElementById('scroll');
-  if(ulElement.childNodes.length > 0) {
-    while(ulElement.childNodes.length > 0) {
-      ulElement.removeChild(ulElement.childNodes[0]);
-    }
+  while(ulElement.childNodes.length > 0) {
+    ulElement.removeChild(ulElement.childNodes[0]);
   }
 }
-
 function hoursDrop() {
   clearData();
   // need to clear and data before this
@@ -32,8 +29,7 @@ function locationsDrop() {
     locationsData.appendChild(locations);
   }
 }
-
-function contactDrop() {
+function contactsDrop() {
   clearData();
   var contactsData = document.getElementById('scroll');
   for(var i = 0; i < contactsArray.length; i++) {

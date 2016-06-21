@@ -60,14 +60,14 @@ function getRandomIntInclusive(min, max) {
 }
 
 function arraySum(testArray) {
-  for(var i = 0; i < testArray.length; i++){
+  for(var i = 0; i < testArray.length; i++) {
     arrayTotal = testArray[i] + arrayTotal;
   }
   return arrayTotal;
 };
 
 // for each hour assign the coookies and customer per store
-for (var i = 0; i < hoursOpen.length; i++) {
+for(var i = 0; i < hoursOpen.length; i++) {
   for(var counter = 0; counter < storeNameArray.length; counter++) {
     var randomNum = getRandomIntInclusive(storeNameArray[counter].min, storeNameArray[counter].max);
     storeNameArray[counter].hourlyCustomers[i] = Math.round(randomNum);
@@ -81,7 +81,7 @@ var hourlyData = document.getElementsByTagName('ul');
 // print out the data and total line
 for(var i = 0; i <= hoursOpen.length; i++) {
   for(var counter = 0; counter < storeNameArray.length; counter++) {
-    if(i < hoursOpen.length){
+    if(i < hoursOpen.length) {
       var hourlyInfo = document.createElement('li');
       hourlyInfo.textContent = 'hour: ' + hoursOpen[i] + ' ~  customers: ' + storeNameArray[counter].hourlyCustomers[i] + ' ~ cookies ' + storeNameArray[counter].hourlyCookies[i];
       hourlyData[counter].appendChild(hourlyInfo);

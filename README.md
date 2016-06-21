@@ -8,4 +8,4 @@ credits:
 function getRandomIntInclusive(min, max) - was sourced from MDN
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
-fonts
+fonts: Lobster - via Google fonts https://www.google.com/fonts#QuickUsePlace:quickUse
