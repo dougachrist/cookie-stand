@@ -1,6 +1,17 @@
+* {
+  background: #999;
+}
+
 h1 {
   text-align: center;
 }
+
+h3 {
+  border: 1px dashed green;
+  font-family: cursive;;
+}
+
+
 p #storeName {
   display: inline;
   font-size: 20px;
@@ -21,4 +32,18 @@ img {
   display: block;
   border: 1px dashed green;
   margin: auto;
+}
+
+.footNav {
+  margin: auto;
+  border: 2px dashed green;
+  display: inline;
+  text-align: center;
+}
+
+.footNav li {
+  text-align: center;
+  margin: 50px;
+  display: inline;
+  height: 50px;
 }
