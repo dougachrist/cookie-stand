@@ -31,7 +31,7 @@ Store.prototype.calCustPerHour = function() {
   }
 };
 
-Store.prototype.calCookiePerHour = function() {
+Store.prototype.calCookiesPerHour = function() {
   this.calCustPerHour();
   for(var i = 0; i < hoursOpen.length; i++) {
     var cookieEachHour = Math.round(this.custPerHourArray[i] * this.avgCookiesPerHour);
@@ -39,15 +39,47 @@ Store.prototype.calCookiePerHour = function() {
   }
 };
 
-storeAlki.calCustPerHour();
-console.log('alki cookies', storeAlki.custPerHourArray );
+// storeAlki.calCookiesPerHour();
+// console.log('table cookies', storeAlki.custPerHourArray);
 
-// Store.prototype.render = function() {
-//   calCookiePerHour();
+var renderStoreTable = function() {
+  var tableData = document.getElementById('cookieTable');
+  var headerRow = document.createElement('tr');
+  var allStores = [storePike, storeSeaTac, storeSeattleCenter, storeCapHill, storeAlki];
+  for(var j = 0; j < allStores.length; j++) {
+    allStores[j].calCookiesPerHour();
+    var headerData = document.createElement('th');
+    headerData.textContent = allStores[j].storeName;
+    headerRow.appendChild(headerData);
+  }
+  tableData.appendChild(headerRow);
+
+  for(var i = 0; i < hoursOpen.length; i++) {
+    var nextRow = document.createElement('tr');
+    for(var j = 0; j < allStores.length; j++) {
+      var moreTableData = document.createElement('td');
+      moreTableData.textContent = allStores[j].cookiesPerHourArray[i];
+      nextRow.appendChild(moreTableData);
+    }
+    tableData.appendChild(nextRow); // alone
+  }
+};
+
+// Store.prototype.renderStoreData = function() {
+//   this.calCookiesPerHour();
 //   for(var i = 0; i < hoursOpen.length; i++) {
-//     var hourlyData = document.getElementsByTagName('table');
+//     var tableData = document.getElementById('cookieTable');
+//     var headerType = document.createElement('tr');
+//     for(var j = 0; j < Store.length; j++) {
+//       var storeNameList = document.createElement('th');
+//       storeNameList.textContent = this.storeName;
+//       headerType[j].appendChild(storeNameList);
+//     }
 //   }
 // };
+
+// storeAlki.render();
+
 // store objects
 // var storePike = {
 //   name: '1st and Pike',
