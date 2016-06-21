@@ -46,10 +46,8 @@ var storeAlki = {
 };
 var storeNameArray = [storePike, storeSeaTac, storeSeattleCenter, storeCapHill, storeAlki];
 
-console.log(storeNameArray[2].name);
-// add the storename as the ul
+// add the storeName as the ul
 for(var i = 0; i < storeNameArray.length; i++) {
-  // console.log(storeNameArray[i].name);
   var storeName = document.getElementById('storeName');
   var storeLocation = document.createElement('ul');
   storeLocation.textContent = storeNameArray[i].name + ' (min: ' + storeNameArray[i].min + ', max: ' + storeNameArray[i].max + ', avg: ' + storeNameArray[i].avgCookies + ')';

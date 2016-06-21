@@ -7,10 +7,22 @@ h1 {
 }
 
 h3 {
+  text-align: center;
   border: 1px dashed green;
-  font-family: cursive;;
+  font-family: cursive;
 }
 
+p {
+  text-align: center;
+  border: 1px dashed green;
+  font-family: arial;
+}
+
+footer {
+  height: 100px;
+  border: 1px dashed green;
+  font-family: arial;
+}
 
 p #storeName {
   display: inline;
@@ -19,6 +31,7 @@ p #storeName {
 }
 
 ul {
+  margin: auto;
   font-size: 15px;
   color: blue;
   width: 500px;
@@ -34,10 +47,16 @@ img {
   margin: auto;
 }
 
+
 .footNav {
-  margin: auto;
   border: 2px dashed green;
-  display: inline;
+  text-align: center;
+}
+
+#scroll {
+  margin: 5px;
+  padding: 5px;
+  border: 2px dashed green;
   text-align: center;
 }
 
