@@ -1,9 +1,11 @@
 * {
-  background: #e0c891;}
+  background: #e0c891;
+}
 h1 {
   font-family: 'Lobster', cursive;
   text-align: center;
-  color: #273431;}
+  color: #273431;
+}
 table {
   border: 1px solid gray;
 }
