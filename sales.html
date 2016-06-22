@@ -9,14 +9,14 @@
     <form id="newStoreForm">
     <fieldset id="newStoreFieldset">
       <label for="storeLocation"> Store Location: </label>
-      <input type="text" name="storeLocation" id="newStoreLocationInput">
-      <input type="submit" value="submit" id="newStoreLocationSubmit">
+      <input type="text" name="storeLocation" id="newStoreLocationInput" required>
       <label for="minimumCustomers"> Minimum Hourly Customers: </label>
-      <input type="text" name="minimumCustomers" id="newStoreMinCust">
+      <input type="number" name="minimumCustomers" id="newStoreMinCust" required>
       <label for="maximumCustomers"> Maximum Hourly Customers: </label>
-      <input type="text" name="maximumCustomers" id="newStoreMaxCust">
-      <label for="averageCookies"> Average Cookies Sold Per Hour: </label>
-      <input type="text" name="averageCookies" id="newAvgCookies">
+      <input type="number" name="maximumCustomers" id="newStoreMaxCust" required>
+      <label for="averageCookies"> Average Cookies Sold Per Customer: </label>
+      <input type="number" name="averageCookies" id="newAvgCookies" required>
+      <input type="submit" value="submit" id="newStoreLocationSubmit">
     </fieldset>
     </form>
 

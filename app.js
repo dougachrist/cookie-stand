@@ -55,7 +55,7 @@ form.addEventListener('submit', function(event) {
   elMin = document.getElementById('newStoreMinCust');
   elMax = document.getElementById('newStoreMaxCust');
   elAvg = document.getElementById('newAvgCookies');
-  var newStore = new Store(elInput.value, elMin.value, elMax.value, elAvg.value);
+  var newStore = new Store(elInput.value, parseInt(elMin.value), parseInt(elMax.value), parseInt(elAvg.value));
   renderHeaderTable();
   renderStandData();
   renderFooterTable();
