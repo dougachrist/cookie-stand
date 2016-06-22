@@ -36,6 +36,7 @@ Store.prototype.calCookiesPerHour = function() {
   for(var i = 0; i < hoursOpen.length; i++) {
     var cookieEachHour = Math.round(this.custPerHourArray[i] * this.avgCookiesPerHour);
     this.cookiesPerHourArray.push(cookieEachHour);
+    this.totalCookies += cookieEachHour;
   }
 };
 
@@ -43,129 +44,46 @@ Store.prototype.calCookiesPerHour = function() {
 // console.log('table cookies', storeAlki.custPerHourArray);
 
 var renderStoreTable = function() {
-  var tableData = document.getElementById('cookieTable');
-  var headerRow = document.createElement('tr');
+  console.log('enter the darn thing');
   var allStores = [storePike, storeSeaTac, storeSeattleCenter, storeCapHill, storeAlki];
   for(var j = 0; j < allStores.length; j++) {
     allStores[j].calCookiesPerHour();
-    var headerData = document.createElement('th');
-    headerData.textContent = allStores[j].storeName;
-    headerRow.appendChild(headerData);
   }
-  tableData.appendChild(headerRow);
+  var tableData = document.getElementById('cookieTable');
+  var headerRow = document.createElement('tr');
+// add first two th here:
+  var blankData = document.createElement('th');
+  blankData.textContent = '';
+  headerRow.appendChild(blankData);
+
+  var tableCookieTotals = document.createElement('th');
+  tableCookieTotals.textContent = 'Daily Location Total';
+  headerRow.appendChild(tableCookieTotals);
 
   for(var i = 0; i < hoursOpen.length; i++) {
-    var nextRow = document.createElement('tr');
-    for(var j = 0; j < allStores.length; j++) {
-      var moreTableData = document.createElement('td');
-      moreTableData.textContent = allStores[j].cookiesPerHourArray[i];
-      nextRow.appendChild(moreTableData);
+    var tableEachHour = document.createElement('th');
+    tableEachHour.textContent = hoursOpen[i];
+    headerRow.appendChild(tableEachHour);
+  }
+  tableData.appendChild(headerRow);
+  console.log("start of issue");
+  // ADDS COOKIE DATA HERE
+
+  for(var j = 0; j < allStores.length; j++) {
+    var tableDataRow = document.createElement('tr');
+    var tableStoreName = document.createElement('td');
+    tableStoreName.textContent = allStores[j].storeName;
+    tableDataRow.appendChild(tableStoreName);
+
+    var tableStoreTotal = document.createElement('td');
+    tableStoreTotal.textContent = allStores[j].totalCookies;
+    tableDataRow.appendChild(tableStoreTotal);
+    for(var i = 0; i < hoursOpen.length; i++) {
+      var tableStoreData = document.createElement('td');
+      tableStoreData.textContent = allStores[j].cookiesPerHourArray[i];
+      tableDataRow.appendChild(tableStoreData);
     }
-    tableData.appendChild(nextRow); // alone
+    tableData.appendChild(tableDataRow);
   }
 };
-
-// Store.prototype.renderStoreData = function() {
-//   this.calCookiesPerHour();
-//   for(var i = 0; i < hoursOpen.length; i++) {
-//     var tableData = document.getElementById('cookieTable');
-//     var headerType = document.createElement('tr');
-//     for(var j = 0; j < Store.length; j++) {
-//       var storeNameList = document.createElement('th');
-//       storeNameList.textContent = this.storeName;
-//       headerType[j].appendChild(storeNameList);
-//     }
-//   }
-// };
-
-// storeAlki.render();
-
-// store objects
-// var storePike = {
-//   name: '1st and Pike',
-//   min: 23,
-//   max: 65,
-//   avgCookies: 6.3,
-//   hourlyCustomers: [],
-//   hourlyCookies: [],
-// };
-// var storeSeaTac = {
-//   name: 'SeaTac Airport',
-//   min: 3,
-//   max: 24,
-//   avgCookies: 1.2,
-//   hourlyCustomers: [],
-//   hourlyCookies: [],
-// };
-// var storeSeattleCenter = {
-//   name: 'Seattle Center',
-//   min: 11,
-//   max: 38,
-//   avgCookies: 3.7,
-//   hourlyCustomers: [],
-//   hourlyCookies: [],
-// };
-// var storeCapHill = {
-//   name: 'Capitol Hill',
-//   min: 20,
-//   max: 38,
-//   avgCookies: 2.3,
-//   hourlyCustomers: [],
-//   hourlyCookies: [],
-// };
-// var storeAlki = {
-//   name: 'Alki',
-//   min: 2,
-//   max: 16,
-//   avgCookies: 4.6,
-//   hourlyCustomers: [],
-//   hourlyCookies: [],
-// };
-// var storeNameArray = [storePike, storeSeaTac, storeSeattleCenter, storeCapHill, storeAlki];
-//
-// // add the storeName as the ul
-// for(var i = 0; i < storeNameArray.length; i++) {
-//   var storeName = document.getElementById('storeName');
-//   var storeLocation = document.createElement('ul');
-//   storeLocation.textContent = storeNameArray[i].name + ' (min: ' + storeNameArray[i].min + ', max: ' + storeNameArray[i].max + ', avg: ' + storeNameArray[i].avgCookies + ')';
-//   storeName.appendChild(storeLocation);
-// }
-//
-// // random number generator & array total
-// function getRandomIntInclusive(min, max) {
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-//
-// function arraySum(testArray) {
-//   for(var i = 0; i < testArray.length; i++) {
-//     arrayTotal = testArray[i] + arrayTotal;
-//   }
-//   return arrayTotal;
-// };
-//
-// // for each hour assign the coookies and customer per store
-// for(var i = 0; i < hoursOpen.length; i++) {
-//   for(var counter = 0; counter < storeNameArray.length; counter++) {
-//     var randomNum = getRandomIntInclusive(storeNameArray[counter].min, storeNameArray[counter].max);
-//     storeNameArray[counter].hourlyCustomers[i] = Math.round(randomNum);
-//     storeNameArray[counter].hourlyCookies[i] = Math.round(randomNum * storeNameArray[counter].avgCookies);
-//   }
-// }
-// where to place the data in the DOM
-
-// var hourlyData = document.getElementsByTagName('ul');
-//
-// // print out the data and total line
-// for(var i = 0; i <= hoursOpen.length; i++) {
-//   for(var counter = 0; counter < storeNameArray.length; counter++) {
-//     if(i < hoursOpen.length) {
-//       var hourlyInfo = document.createElement('li');
-//       hourlyInfo.textContent = 'hour: ' + hoursOpen[i] + ' ~  customers: ' + storeNameArray[counter].hourlyCustomers[i] + ' ~ cookies ' + storeNameArray[counter].hourlyCookies[i];
-//       hourlyData[counter].appendChild(hourlyInfo);
-//     } else {
-//       var hourlyInfo = document.createElement('li');
-//       hourlyInfo.textContent = 'Total Customers: ' + arraySum(storeNameArray[counter].hourlyCustomers) + ' ~  Total Cookies ' + arraySum(storeNameArray[counter].hourlyCookies);
-//       hourlyData[counter].appendChild(hourlyInfo);
-//     }
-//   }
-// }
+renderStoreTable();
