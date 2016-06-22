@@ -2,6 +2,7 @@
 // global varibles
 var arrayTotal = 0;
 var hoursOpen = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+var grandTotalCookies = 0;
 
 function Store(storeName,minCustPerHour,maxCustPerHour,avgCookiesPerHour) {
   this.storeName = storeName;
@@ -44,7 +45,6 @@ Store.prototype.calCookiesPerHour = function() {
 // console.log('table cookies', storeAlki.custPerHourArray);
 
 var renderStoreTable = function() {
-  console.log('enter the darn thing');
   var allStores = [storePike, storeSeaTac, storeSeattleCenter, storeCapHill, storeAlki];
   for(var j = 0; j < allStores.length; j++) {
     allStores[j].calCookiesPerHour();
@@ -66,7 +66,7 @@ var renderStoreTable = function() {
     headerRow.appendChild(tableEachHour);
   }
   tableData.appendChild(headerRow);
-  console.log("start of issue");
+
   // ADDS COOKIE DATA HERE
 
   for(var j = 0; j < allStores.length; j++) {
@@ -77,6 +77,8 @@ var renderStoreTable = function() {
 
     var tableStoreTotal = document.createElement('td');
     tableStoreTotal.textContent = allStores[j].totalCookies;
+    grandTotalCookies += allStores[j].totalCookies;
+
     tableDataRow.appendChild(tableStoreTotal);
     for(var i = 0; i < hoursOpen.length; i++) {
       var tableStoreData = document.createElement('td');
@@ -85,5 +87,25 @@ var renderStoreTable = function() {
     }
     tableData.appendChild(tableDataRow);
   }
+
+  // TOTALS
+  var tableDataRow = document.createElement('tr');
+  var totalCellName = document.createElement('td');
+  totalCellName.textContent = 'Totals';
+  tableDataRow.appendChild(totalCellName);
+  var grandTotalCell = document.createElement('td');
+  grandTotalCell.textContent = grandTotalCookies;
+  tableDataRow.appendChild(grandTotalCell);
+  for(var i = 0; i < hoursOpen.length; i++) {
+    var totalcookiesEachhour = 0;
+    var totalCookiesByHour = document.createElement('td');
+    for(var j = 0; j < allStores.length; j++) {
+      totalcookiesEachhour += allStores[j].cookiesPerHourArray[i];
+    }
+    totalCookiesByHour.textContent = totalcookiesEachhour;
+    tableDataRow.appendChild(totalCookiesByHour);
+  }
+  tableData.appendChild(tableDataRow);
+
 };
 renderStoreTable();
