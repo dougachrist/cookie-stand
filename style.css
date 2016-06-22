@@ -4,6 +4,19 @@ h1 {
   font-family: 'Lobster', cursive;
   text-align: center;
   color: #273431;}
+table {
+  border: 1px solid gray;
+}
+
+th {
+  width: 50px;
+  text-align: center;
+}
+td {
+  text-align: center;
+  border: 1px solid gray;
+}
+
 h3 {
   color: #883300;
   text-align: center;
