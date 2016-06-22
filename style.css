@@ -1,55 +1,141 @@
 * {
-  background: #e0c891;}
+  background: #e0c891;
+}
+
 h1 {
   font-family: 'Lobster', cursive;
   text-align: center;
-  color: #273431;}
+  color: #273431;
+}
+
+table {
+  border: 1px solid gray;
+}
+
+section {
+  padding-right: 75px;
+  text-align: center;
+}
+
+nav {
+  padding-right: 75px;
+}
+
+aside {
+  float:left;
+  padding: 5px;
+  height: 100%;
+  width: 150px;
+  display: block;
+  border: 1px solid hsla(120, 30%, 22%, 0.94);
+}
+
+th {
+  width: 50px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  border: 1px solid gray;
+}
+
 h3 {
   color: #883300;
   text-align: center;
-  font-family: cursive;}
+  font-family: cursive;
+}
+
 p {
-  color: hsla(120, 30%, 22%, 0.94);;
+  color: hsla(120, 30%, 22%, 0.94);
   text-align: center;
-  font-family: Georgia;}
+  font-family: Georgia;
+}
+
 footer {
+  padding: 10px;
   text-align: center;
   height: 200px;
-  font-family: arial;}
-ul {
-  margin: auto;
-  margin-top: 5px;
-  font-size: 15px;
-  color: blue;
-  width: 500px;}
+  font-family: arial;
+}
+
+aside div {
+  margin: 10px;
+  padding: 5px;
+  color: hsla(120, 30%, 22%, 0.94);
+  text-align: center;
+  font-family: Georgia;
+  border: 1px solid hsla(120, 30%, 22%, 0.94);
+}
+
 li {
   color: black;
-  background:rgba(136, 51, 0, 0.28);}
+  background:rgba(136, 51, 0, 0.28);
+}
+
 img {
+  width: 75%;
+  height: 75%;
   display: block;
-  margin: auto;}
+  text-align: center;
+  margin: auto;
+}
+
+aside img {
+    padding-left: 0px;
+    margin: auto;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: #888 solid thin;
+}
+
+footer div {
+  padding-right: 60px;
+}
+
 .footNav {
-  text-align: center;}
+  text-align: center;
+  padding-right: 45px;
+}
+
 #scroll {
   margin: auto;
   margin-top:10px;
   padding: 5px;
   text-align: center;
-  font-family: arial;}
+  font-family: arial;
+}
+
 #scroll li {
+  padding-left: 80px;
+  text-align: center;
   list-style-type: none;
   display: block;
-  font-family: arial;}
+  font-family: arial;
+}
+
 p #storeName {
   font-size: 20px;
-  text-align: center;}
+  text-align: center;
+}
+
 #storeName ul {
   text-align: left;
   float: left;
-  list-style-type: none;}
+  list-style-type: none;
+}
+
+div .info {
+  padding-right: 75px;
+  margin: auto;
+  text-align: center;
+}
+
 .footNav li {
   text-decoration: underline;
   text-align: center;
   margin: 50px;
   display: inline;
-  height: 50px;}
+  height: 50px;
+}
