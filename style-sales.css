@@ -1,0 +1,71 @@
+* {
+  background: #e0c891;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  color: #273431;
+}
+img {
+}
+
+h3 {
+  color: #883300;
+  text-align: center;
+  font-family: cursive;
+}
+
+table {
+  border: 1px solid gray;
+}
+
+
+th {
+  width: 50px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  border: 1px solid gray;
+}
+
+p {
+  color: hsla(120, 30%, 22%, 0.94);
+  text-align: center;
+  font-family: Georgia;
+}
+
+fieldset {
+  width: 500px;
+  margin: 5px;
+  padding: 15px;
+  margin-left: 200px;
+}
+
+label {
+  float: left;
+  display: block;
+  width: 250px;
+  margin: auto;
+  margin-top: 5px;
+  color: hsla(120, 30%, 22%, 0.94);
+  font-family: Georgia;
+}
+
+input {
+  display: block;
+  margin: auto;
+  margin-right: 100px;
+  margin-top: 5px;
+}
+
+input #newStoreLocationSubmit {
+  display: block;
+  margin: auto;
+  margin-right: 100px;
+  margin-top: 5px;
+  color: hsla(120, 30%, 22%, 0.94);
+  font-family: Georgia;
+}
