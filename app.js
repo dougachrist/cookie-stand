@@ -1,15 +1,15 @@
 'use strict';
 
 var arrayTotal = 0;
-var hoursOpen = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+var hoursOpen = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 var grandTotalCookies = 0;
 var tableData = document.getElementById('cookieTable');
 var allStores = [];
 var form = document.getElementById('newStoreForm');
-var elInput = '';
-var elMin = 0;
-var elMax = 0;
-var elAvg = 0;
+// var elInput = '';
+// var elMin = 0;
+// var elMax = 0;
+// var elAvg = 0;
 function Store(storeName,minCustPerHour,maxCustPerHour,avgCookiesPerHour) {
   this.storeName = storeName;
   this.minCustPerHour = minCustPerHour;
@@ -51,10 +51,10 @@ var storeAlki = new Store('Alki',2,16,4.6);
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
-  elInput = document.getElementById('newStoreLocationInput');
-  elMin = document.getElementById('newStoreMinCust');
-  elMax = document.getElementById('newStoreMaxCust');
-  elAvg = document.getElementById('newAvgCookies');
+  var elInput = document.getElementById('newStoreLocationInput');
+  var elMin = document.getElementById('newStoreMinCust');
+  var elMax = document.getElementById('newStoreMaxCust');
+  var elAvg = document.getElementById('newAvgCookies');
   var newStore = new Store(elInput.value, parseInt(elMin.value), parseInt(elMax.value), parseInt(elAvg.value));
   renderHeaderTable();
   renderStandData();
