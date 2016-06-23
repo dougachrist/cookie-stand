@@ -52,6 +52,28 @@ p {
   font-family: Georgia;
 }
 
+fieldset {
+  width: 500px;
+  margin: 5px;
+  padding: 15px;
+  margin-left: 200px;
+}
+
+label {
+  float: left;
+  display: block;
+  width: 250px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+input {
+  display: block;
+  margin: auto;
+  margin-right: 100px;
+  margin-top: 5px;
+}
+
 footer {
   padding: 10px;
   text-align: center;
