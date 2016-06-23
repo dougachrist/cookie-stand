@@ -1,3 +1,53 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* *****END OF RESET STYLE SHEEET*/
+
 body {
   background: #e0c891;
 }
@@ -10,54 +60,49 @@ h1 {
   font-family: 'Lobster', cursive;
   text-align: center;
   color: #273431;
+  font-size: 100px;
 }
 
-h3 {
+header img {
+  margin: 5px auto;
+  display: block;
+  height: 25%;
+  width: 25%;
+}
+
+h4 {
+  color: #eee;
+  font-family: cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+h3 p {
   color: #883300;
+  margin: auto;
   text-align: center;
   font-family: cursive;
+  font-size: 50px;
 }
 
-section {
-  float: left;
-  padding-right: 75px;
-  text-align: center;
+main {
+  width: 960px;
+  margin: 30px auto;
+}
+
+main img {
+  height: 100%;
+  width: 100%;
 }
 
 .green_box {
-  padding: 100px;
+  padding: 25px 25px ;
   background: green;
 }
 
-nav {
-  padding-right: 75px;
-}
-
-aside {
-  float:left;
-  padding: 5px;
-  height: 100%;
-  width: 150px;
-  display: block;
-  border: 1px solid hsla(120, 30%, 22%, 0.94);
-}
-
-aside div {
-  margin: 10px;
-  padding: 5px;
-  color: hsla(120, 30%, 22%, 0.94);
-  text-align: center;
-  font-family: Georgia;
-  border: 1px solid hsla(120, 30%, 22%, 0.94);
-}
-
-aside img {
-    padding-left: 0px;
-    margin: auto;
-    display: block;
-    width: 100%;
-    border: none;
-    outline: #888 solid thin;
+.green_box img {
+  /*height: 50px;
+  width: 50px;*/
 }
 
 p {
@@ -66,19 +111,19 @@ p {
   font-family: Georgia;
 }
 
-footer {
-  padding: 10px;
+ul {
+  width: 100%;
+}
+
+.green_box li {
+  font-size: 36px;
   text-align: center;
-  height: 200px;
-  font-family: arial;
+  margin: auto;
+  display: block;
+  color: yellow;
 }
 
-li {
-  color: black;
-  background:rgba(136, 51, 0, 0.28);
-}
-
-img {
+.green_box img {
   width: 75%;
   height: 75%;
   display: block;
@@ -86,54 +131,65 @@ img {
   margin: auto;
 }
 
-
-
-footer div {
-  padding-right: 60px;
+section .merch {
+  width: 960px;
 }
 
-.footNav {
-  text-align: center;
-  padding-right: 45px;
+.merch ul {
+  width: 960px;
 }
 
-#scroll {
-  margin: auto;
-  margin-top:10px;
-  padding: 5px;
-  text-align: center;
-  font-family: arial;
-}
-
-#scroll li {
-  padding-left: 80px;
-  text-align: center;
-  list-style-type: none;
-  display: block;
-  font-family: arial;
-}
-
-p #storeName {
-  font-size: 20px;
-  text-align: center;
-}
-
-#storeName ul {
-  text-align: left;
+.merch li {
+  margin-right: 30px;
+  width: 300px;
   float: left;
-  list-style-type: none;
-}
-
-div .info {
-  padding-right: 75px;
-  margin: auto;
-  text-align: center;
-}
-
-.footNav li {
-  text-decoration: underline;
-  text-align: center;
-  margin: 50px;
   display: inline;
-  height: 50px;
+}
+
+.merch li:last-child {
+  margin-right: 0px;
+}
+
+.merch li img {
+    width: 300px;
+}
+
+section .family {
+  width: 960px;
+}
+
+.family ul {
+  width: 960px;
+}
+
+.family li {
+  margin-right: 30px;
+  width: 465px;
+  float: left;
+  display: inline;
+}
+
+.family li:last-child {
+  margin-right: 0px;
+}
+
+.family li img {
+    width: 450px;
+}
+
+.family p {
+  font-size: 24px;
+}
+
+footer{
+  clear: left;
+}
+
+footer ul {
+  text-align: center;
+}
+
+footer li {
+  display: inline;
+  margin: 50px;
 }

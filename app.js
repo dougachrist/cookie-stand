@@ -93,6 +93,7 @@ var renderStandData = function() {
 var renderFooterTable = function() {
   var tableDataRow = document.createElement('tr');
   var totalCellName = document.createElement('td');
+  tableDataRow.className = 'lastRow';
   totalCellName.textContent = 'Totals';
   tableDataRow.appendChild(totalCellName);
   var grandTotalCell = document.createElement('td');

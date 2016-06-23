@@ -1,63 +1,124 @@
-* {
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* *******   END OF STYLE SHEET ********/
+body {
   background: #e0c891;
+  color: hsla(120, 30%, 22%, 0.94);
+}
+
+header {
+  background: orange;
 }
 
 h1 {
   font-family: 'Lobster', cursive;
   text-align: center;
   color: #273431;
+  font-size: 100px;
 }
+
 img {
+  display: block;
+  width: 25%;
+  height: 25%;
+  margin: 5px auto ;
 }
 
 h3 {
   color: #883300;
+  margin: auto;
   text-align: center;
   font-family: cursive;
+  font-size: 50px;
 }
 
-table {
-  border: 1px solid gray;
-}
-
-
-th {
-  width: 50px;
+h2 {
+  background: red;
+  width: 300px;
+  height: 30px;
+  color: #fff;
+  margin: 30px auto 10px auto;
   text-align: center;
+  vertical-align: middle;
+  font-family: cursive;
+  font-size: 20px;
+  border: 2px solid hsla(120, 30%, 22%, 0.94);
+  border-radius: 5px;
 }
 
-td {
-  text-align: center;
-  border: 1px solid gray;
-}
-
-p {
-  color: hsla(120, 30%, 22%, 0.94);
-  text-align: center;
-  font-family: Georgia;
+form {
+width: 420px;
+margin: 10px auto 10px auto;
 }
 
 fieldset {
-  width: 500px;
-  margin: 5px;
+  border: 2px solid hsla(120, 30%, 22%, 0.94);
   padding: 15px;
-  margin-left: 200px;
 }
 
 label {
   float: left;
   display: block;
   width: 250px;
-  margin: auto;
+  /*margin: auto;*/
   margin-top: 5px;
   color: hsla(120, 30%, 22%, 0.94);
   font-family: Georgia;
 }
 
 input {
+  background: #e0c891;
+  border: 2px solid hsla(120, 30%, 22%, 0.94);
   display: block;
-  margin: auto;
-  margin-right: 100px;
+  /*margin: auto;*/
+  /*margin-right: 200px;*/
   margin-top: 5px;
 }
 
@@ -66,6 +127,27 @@ input #newStoreLocationSubmit {
   margin: auto;
   margin-right: 100px;
   margin-top: 5px;
-  color: hsla(120, 30%, 22%, 0.94);
   font-family: Georgia;
+}
+
+table {
+  margin: 10px auto 10px auto;
+  border: 1px solid gray;
+}
+
+th {
+  width: 50px;
+  vertical-align: bottom;
+}
+
+.lastRow td {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+td {
+  vertical-align: middle;;
+  text-align: center;
+  margin: auto;
+  border: 1px solid gray;
 }
