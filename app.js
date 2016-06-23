@@ -6,10 +6,7 @@ var grandTotalCookies = 0;
 var tableData = document.getElementById('cookieTable');
 var allStores = [];
 var form = document.getElementById('newStoreForm');
-// var elInput = '';
-// var elMin = 0;
-// var elMax = 0;
-// var elAvg = 0;
+
 function Store(storeName,minCustPerHour,maxCustPerHour,avgCookiesPerHour) {
   this.storeName = storeName;
   this.minCustPerHour = minCustPerHour;
