@@ -6,6 +6,8 @@ var grandTotalCookies = 0;
 var tableData = document.getElementById('cookieTable');
 var allStores = [];
 var form = document.getElementById('newStoreForm');
+var newStoreAdded = true;
+var firstRun = true;
 
 function Store(storeName,minCustPerHour,maxCustPerHour,avgCookiesPerHour) {
   this.storeName = storeName;
@@ -25,6 +27,7 @@ function getRandomIntInclusive(min, max) {
 }
 
 Store.prototype.calCustPerHour = function() {
+  this.custPerHourArray = []; // reset to zero if we run again
   for(var i = 0; i < hoursOpen.length; i++) {
     var custEachHour = Math.round(getRandomIntInclusive(this.minCustPerHour,this.maxCustPerHour));
     this.custPerHourArray.push(custEachHour);
@@ -33,6 +36,8 @@ Store.prototype.calCustPerHour = function() {
 
 Store.prototype.calCookiesPerHour = function() {
   this.calCustPerHour();
+  this.cookiesPerHourArray = []; // reset to zero for 2nd run
+  this.totalCookies = 0;
   for(var i = 0; i < hoursOpen.length; i++) {
     var cookieEachHour = Math.round(this.custPerHourArray[i] * this.avgCookiesPerHour);
     this.cookiesPerHourArray.push(cookieEachHour);
@@ -49,14 +54,42 @@ var storeAlki = new Store('Alki',2,16,4.6);
 form.addEventListener('submit', function(event) {
   event.preventDefault();
   var elInput = document.getElementById('newStoreLocationInput');
-  var elMin = document.getElementById('newStoreMinCust');
-  var elMax = document.getElementById('newStoreMaxCust');
-  var elAvg = document.getElementById('newAvgCookies');
-  var newStore = new Store(elInput.value, parseInt(elMin.value), parseInt(elMax.value), parseInt(elAvg.value));
-  renderHeaderTable();
-  renderStandData();
-  renderFooterTable();
+  var nameLowerCase = elInput.value.toLowerCase();
+  for(var j = 0; j < allStores.length; j++) {
+    if(nameLowerCase === allStores[j].storeName.toLowerCase()) {
+      newStoreAdded = false;
+      var sameStore = allStores[j];
+      break;
+    } else {
+      newStoreAdded = true;
+    }
+  }
+  if(newStoreAdded) {
+    var elMin = document.getElementById('newStoreMinCust');
+    var elMax = document.getElementById('newStoreMaxCust');
+    var elAvg = document.getElementById('newAvgCookies');
+    var newStore = new Store(elInput.value, parseInt(elMin.value), parseInt(elMax.value), parseInt(elAvg.value));
+    renderHeaderTable();
+    renderStandData();
+    renderFooterTable();
+  } else {
+
+    //we need to update the new line with the new inputs
+    var elMin = document.getElementById('newStoreMinCust');
+    var elMax = document.getElementById('newStoreMaxCust');
+    var elAvg = document.getElementById('newAvgCookies');
+
+    sameStore.minCustPerHour = parseInt(elMin.value);
+    sameStore.maxCustPerHour = parseInt(elMax.value);
+    sameStore.avgCookiesPerHour = parseInt(elAvg.value);
+    sameStore.calCookiesPerHour();
+
+    renderHeaderTable();
+    renderStandData();
+    renderFooterTable();
+  }
 });
+
 var renderHeaderTable = function() {
   tableData.innerHTML = '';
   var headerRow = document.createElement('tr');
@@ -93,6 +126,7 @@ var renderStandData = function() {
 var renderFooterTable = function() {
   var tableDataRow = document.createElement('tr');
   var totalCellName = document.createElement('td');
+  tableDataRow.className = 'lastRow';
   totalCellName.textContent = 'Totals';
   tableDataRow.appendChild(totalCellName);
   var grandTotalCell = document.createElement('td');
@@ -116,3 +150,4 @@ var renderFooterTable = function() {
 renderHeaderTable();
 renderStandData();
 renderFooterTable();
+firstRun = false;

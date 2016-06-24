@@ -7,48 +7,57 @@
   </head>
   <body>
     <header>
-      <nav>
-        <h1>Pat's Salmon Cookies</h1>
-        <img src="img-cookie/salmon.png">
-        <h3> Welcome to the best tasting salmon cookies on Earth!</h3>
-      </nav>
+      <h1>Pat's Salmon Cookies</h1>
+      <img src="img-cookie/salmon.png">
+      <h3>
+          <h4>EAT UP... STREAM!</h4>
+        </h3>
     </header>
-  <aside>
-    <h3>Merchandise:</h3>
-    <div>T-shirt</div>
-    <img src="img-cookie/shirt.jpg">
-    <div>Cookie Cutter</div>
-    <img src="img-cookie/cutter.jpeg">
-    <div>Cookies</div>
-    <img src="img-cookie/frosted-cookie.jpg">
-    <h3 class="family">Our Family</h3>
-    <img src="img-cookie/family.jpg">
-  </aside>
-    <section>
-      <div class="green_box">
-      <img src="img-cookie/chinook.jpg">
-    </div>
-    </section>
-    <section>
-      <div class="info">
-        <p>Our cookies are always organically produced and gluten free.</p>
-        <p>Made fresh daily in our ovens.</p>
-        <p>100% of your daily omega 3 fatty acids.</p>
-        <p>Taste pretty pretty pretty good.</p>
-      </div>
-    </section>
-    <section>
-      <h1><a href="sales.html">Sales Data</a></h1>
-    </section>
-    <footer>
-      <div>Get a hold of us:</div>
-      <ul class="footNav">
-        <li onclick="hoursDrop()">hours</li>
-        <li onclick="locationsDrop()">locations</li>
-        <li onclick="contactsDrop()">contact</li>
+    <main>
+      <section class="green_box">
+        <!-- <img src="img-cookie/chinook.jpg">
+      </section>
+      <section class="info"> -->
+      <ul>
+        <li>Our cookies are always organically produced and gluten free.</li>
+        <li>Made fresh daily in our ovens.</li>
+        <img src="img-cookie/chinook.jpg">
+        <li>100% of your daily omega 3 fatty acids.</li>
+        <li>Taste pretty pretty pretty good.</li>
       </ul>
-      <ul id="scroll"></ul>
-    </footer>
+    </section>
+      <section class="merch">
+      <h4>Merchandise:</h4>
+      <ul>
+      <!-- <div>T-shirt</div>  Lables will appear on scroll over-->
+      <li><img src="img-cookie/shirt.jpg"></li>
+      <!-- <div>Cookie Cutter</div> -->
+      <li><img src="img-cookie/cutter.jpeg"></li>
+      <!-- <div>Cookies</div> -->
+      <li><img src="img-cookie/newcookie.jpg"></li>
+      </ul>
+    </section>
+    <section class="family">
+      <h4>Our Family:</h4>
+      <ul>
+        <li><img src="img-cookie/family.jpg"></li>
+        <li>
+          <div>
+            <img id="fishy" src="img-cookie/fishyfish.jpg">
+            <p>Our family has been in the cookie making business for years. As you can see, we love cookies and we hope you enjoy our cookies as much enjoy making them. We personally spend time at each bakery to make sure evey cookie is great. We promise you'll love each one and we know you will come back for more!</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <h4>Get a hold of us:</h4>
+      <ul>
+        <li>hours</li>
+        <li>locations</li>
+        <li>contact</li>
+      </ul>
+  </footer>
     <script src='app-index.js'></script>
   </body>
 </html>

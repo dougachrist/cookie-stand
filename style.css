@@ -1,63 +1,100 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* *****END OF RESET STYLE SHEEET*/
+
 body {
   background: #e0c891;
 }
 
 header {
-  background: orange;
+  background: linear-gradient(orange, #e0c891);
 }
 
 h1 {
   font-family: 'Lobster', cursive;
   text-align: center;
   color: #273431;
+  font-size: 100px;
 }
 
-h3 {
+header img {
+  margin: 5px auto;
+  display: block;
+  height: 25%;
+  width: 25%;
+}
+
+h4 {
   color: #883300;
+  margin: auto;
   text-align: center;
   font-family: cursive;
+  font-size: 50px;
 }
 
-section {
-  float: left;
-  padding-right: 75px;
-  text-align: center;
+main {
+  width: 960px;
+  margin: 30px auto;
 }
 
 .green_box {
-  padding: 100px;
-  background: green;
+  padding: 25px 25px ;
+  background: radial-gradient(#fff 5%, #fff 55%, #e0c891 60%)
 }
 
-nav {
-  padding-right: 75px;
-}
-
-aside {
-  float:left;
-  padding: 5px;
-  height: 100%;
-  width: 150px;
+.green_box img {
+  width: 60%;
+  height: 60%;
   display: block;
-  border: 1px solid hsla(120, 30%, 22%, 0.94);
-}
-
-aside div {
-  margin: 10px;
-  padding: 5px;
-  color: hsla(120, 30%, 22%, 0.94);
+  margin-top: 200px;
   text-align: center;
-  font-family: Georgia;
-  border: 1px solid hsla(120, 30%, 22%, 0.94);
-}
-
-aside img {
-    padding-left: 0px;
-    margin: auto;
-    display: block;
-    width: 100%;
-    border: none;
-    outline: #888 solid thin;
+  margin: auto;
 }
 
 p {
@@ -66,74 +103,104 @@ p {
   font-family: Georgia;
 }
 
-footer {
-  padding: 10px;
-  text-align: center;
-  height: 200px;
-  font-family: arial;
+.green_box ul {
+  width: 100%;
 }
 
-li {
-  color: black;
-  background:rgba(136, 51, 0, 0.28);
-}
-
-img {
-  width: 75%;
-  height: 75%;
-  display: block;
+.green_box li {
+  font-size: 36px;
   text-align: center;
+  text-shadow: 1px 1px gray;
   margin: auto;
-}
-
-
-
-footer div {
-  padding-right: 60px;
-}
-
-.footNav {
-  text-align: center;
-  padding-right: 45px;
-}
-
-#scroll {
-  margin: auto;
-  margin-top:10px;
-  padding: 5px;
-  text-align: center;
-  font-family: arial;
-}
-
-#scroll li {
-  padding-left: 80px;
-  text-align: center;
-  list-style-type: none;
   display: block;
-  font-family: arial;
+  color: hsla(120, 30%, 22%, 0.94);
 }
 
-p #storeName {
-  font-size: 20px;
-  text-align: center;
+section .merch {
+  width: 960px;
+  }
+
+.merch ul {
+  margin-top: 5px;
+  width: 960px;
 }
 
-#storeName ul {
-  text-align: left;
+.merch li {
+  margin-right: 30px;
+  width: 300px;
   float: left;
-  list-style-type: none;
-}
-
-div .info {
-  padding-right: 75px;
-  margin: auto;
-  text-align: center;
-}
-
-.footNav li {
-  text-decoration: underline;
-  text-align: center;
-  margin: 50px;
   display: inline;
-  height: 50px;
+}
+
+.merch li:last-child {
+  margin-right: 0px;
+  margin-bottom: 10px;
+}
+
+.merch li img {
+    width: 300px;
+    box-shadow: 0px 0px 5px 5px gray;
+  }
+
+section .family {
+  width: 960px;
+}
+
+.family ul {
+  margin-top: 30px;
+  width: 960px;
+}
+
+.family li {
+  margin-right: 30px;
+  width: 465px;
+  float: left;
+  display: inline;
+  margin-bottom: 10px;
+}
+
+.family li:last-child {
+  margin-right: 0px;
+}
+
+.family li img {
+    width: 450px;
+    box-shadow: 0px 0px 2px 2px white;
+}
+
+.family p {
+  text-align: justify;;
+  font-size: 24px;
+}
+
+.family div {
+  width: 465px;
+}
+
+#fishy {
+  margin-left: 5px;
+  float: right;
+  width: 25%;
+  height: 25%;
+  box-shadow: 0px 0px 2px 2px white;
+}
+
+footer{
+  clear: left;
+}
+
+.footer h4 {
+  margin-bottom: 40px;
+}
+
+footer ul {
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+footer li {
+  display: inline;
+  margin: 50px;
+  color: hsla(120, 30%, 22%, 0.94);
+  font-size: 18px;
 }
