@@ -53,7 +53,7 @@ body {
 }
 
 header {
-  background: orange;
+  background: linear-gradient(orange, #e0c891);
 }
 
 h1 {
@@ -71,13 +71,6 @@ header img {
 }
 
 h4 {
-  color: #eee;
-  font-family: cursive;
-  font-size: 50px;
-  text-align: center;
-}
-
-h3 p {
   color: #883300;
   margin: auto;
   text-align: center;
@@ -90,19 +83,18 @@ main {
   margin: 30px auto;
 }
 
-main img {
-  height: 100%;
-  width: 100%;
-}
-
 .green_box {
   padding: 25px 25px ;
-  background: green;
+  background: radial-gradient(#fff 5%, #fff 55%, #e0c891 60%)
 }
 
 .green_box img {
-  /*height: 50px;
-  width: 50px;*/
+  width: 60%;
+  height: 60%;
+  display: block;
+  margin-top: 200px;
+  text-align: center;
+  margin: auto;
 }
 
 p {
@@ -111,31 +103,25 @@ p {
   font-family: Georgia;
 }
 
-ul {
+.green_box ul {
   width: 100%;
 }
 
 .green_box li {
   font-size: 36px;
   text-align: center;
+  text-shadow: 1px 1px gray;
   margin: auto;
   display: block;
-  color: yellow;
-}
-
-.green_box img {
-  width: 75%;
-  height: 75%;
-  display: block;
-  text-align: center;
-  margin: auto;
+  color: hsla(120, 30%, 22%, 0.94);
 }
 
 section .merch {
   width: 960px;
-}
+  }
 
 .merch ul {
+  margin-top: 5px;
   width: 960px;
 }
 
@@ -148,17 +134,20 @@ section .merch {
 
 .merch li:last-child {
   margin-right: 0px;
+  margin-bottom: 10px;
 }
 
 .merch li img {
     width: 300px;
-}
+    box-shadow: 0px 0px 5px 5px gray;
+  }
 
 section .family {
   width: 960px;
 }
 
 .family ul {
+  margin-top: 30px;
   width: 960px;
 }
 
@@ -167,6 +156,7 @@ section .family {
   width: 465px;
   float: left;
   display: inline;
+  margin-bottom: 10px;
 }
 
 .family li:last-child {
@@ -175,6 +165,7 @@ section .family {
 
 .family li img {
     width: 450px;
+    box-shadow: 0px 0px 2px 2px white;
 }
 
 .family p {
@@ -187,20 +178,29 @@ section .family {
 }
 
 #fishy {
+  margin-left: 5px;
   float: right;
   width: 25%;
   height: 25%;
+  box-shadow: 0px 0px 2px 2px white;
 }
 
 footer{
   clear: left;
 }
 
+.footer h4 {
+  margin-bottom: 40px;
+}
+
 footer ul {
   text-align: center;
+  margin-bottom: 75px;
 }
 
 footer li {
   display: inline;
   margin: 50px;
+  color: hsla(120, 30%, 22%, 0.94);
+  font-size: 18px;
 }

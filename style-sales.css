@@ -54,7 +54,7 @@ body {
 }
 
 header {
-  background: orange;
+  background: linear-gradient(orange, #e0c891);
 }
 
 h1 {
@@ -90,6 +90,11 @@ h2 {
   font-size: 25px;
   border: 2px solid hsla(120, 30%, 22%, 0.94);
   border-radius: 5px;
+}
+
+h2:hover {
+  background-color: pink;
+  cursor: pointer;
 }
 
 form {
