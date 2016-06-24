@@ -178,7 +178,18 @@ section .family {
 }
 
 .family p {
+  text-align: justify;;
   font-size: 24px;
+}
+
+.family div {
+  width: 465px;
+}
+
+#fishy {
+  float: right;
+  width: 25%;
+  height: 25%;
 }
 
 footer{

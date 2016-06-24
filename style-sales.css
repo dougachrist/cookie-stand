@@ -86,9 +86,8 @@ h2 {
   color: #fff;
   margin: 30px auto 10px auto;
   text-align: center;
-  vertical-align: middle;
-  font-family: cursive;
-  font-size: 20px;
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
   border: 2px solid hsla(120, 30%, 22%, 0.94);
   border-radius: 5px;
 }
