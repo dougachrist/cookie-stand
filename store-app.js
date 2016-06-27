@@ -6,6 +6,26 @@ var elInput = '';
 
 var wPage = document.getElementById('page');
 
+var openOrdersArray = [];
+var closedOrdersArray = [];
+
+function Order(productOrdered,quantity,custName,address,city,state,zip,paymentType) {
+  // this.order# = i
+  this.productOrdered = productProduct;
+  this.quantity = quantity;
+  this.custName = custName;
+  this.address = adress;
+  this.city = city;
+  this.state = state;
+  this.zip = zip;
+  this.paymentype = paymentType;
+  openOrdersArray.push(this);
+
+}
+
+// var newOrder = new Order(product, quantity, custName,custAddress,custCity,custState,custZip,custPaymentInfo);
+
+// set defaults to zero
 localStorage.setItem('productType','');
 localStorage.setItem('orderQuantity','');
 localStorage.setItem('custName','');
@@ -20,30 +40,31 @@ if(webpage === 'Store') {
   form.addEventListener('submit', function(event) {
     event.preventDefault();
     var elInput = document.getElementById('productInput');
-    product = elInput.value;
+    inputProduct = elInput.value;
     var elInput = document.getElementById('productQuantity');
-    quantity = elInput.value;
+    inputQuantity = elInput.value;
     var elInput = document.getElementById('custName');
-    custName = elInput.value;
+    inputCustName = elInput.value;
     var elInput = document.getElementById('custAddress');
-    custAddress = elInput.value;
+    inputCustAddress = elInput.value;
     var elInput = document.getElementById('custCity');
-    custCity = elInput.value;
+    inputCustCity = elInput.value;
     var elInput = document.getElementById('custState');
-    custState = elInput.value;
+    inputCustState = elInput.value;
     var elInput = document.getElementById('custZip');
-    custZip = elInput.value;
-    var elInput = document.getElementById('custPaymentInfo');
-    custPaymentInfo = elInput.value;
+    inputCustZip = elInput.value;
+    var elInput = document.getElementById('custPaymentType');
+    inputCustPaymentType = elInput.value;
 
-    localStorage.setItem('productType',product);
-    localStorage.setItem('orderQuantity',quantity);
-    localStorage.setItem('custName',custName);
-    localStorage.setItem('custAddress',custAddress);
-    localStorage.setItem('custCity',custCity);
-    localStorage.setItem('custState',custState);
-    localStorage.setItem('custZip',custZip);
-    localStorage.setItem('custPaymentInfo',custPaymentInfo);
+    localStorage.setItem('locStorProduct',inputProduct);
+    localStorage.setItem('locStorQuantity',inputQuantity);
+    localStorage.setItem('locStorCustName',inputCustName);
+    localStorage.setItem('locStorCustAddress',inputCustAddress);
+    localStorage.setItem('locStorCustCity',inputCustCity);
+    localStorage.setItem('locStorCustState',inputCustState);
+    localStorage.setItem('locStorCustZip',inputCustZip);
+    localStorage.setItem('locStorCustPaymentType',inputCustPaymentType);
+    // updateOrderProcessing();
     // console.log('product:',product);
   });
 }
@@ -63,22 +84,24 @@ if (webpage === 'Order Processing') {
   updateSales.addEventListener('submit', function(event) {
     event.preventDefault();
 
+    console.log('product:', localStorage.getItem('locStorProduct'));
+
     var productProcess = document.getElementById('product');
-    productProcess.textContent = localStorage.getItem('productType');
+    productProcess.textContent = localStorage.getItem('locStorProduct');
     var productProcess = document.getElementById('quantity');
-    productProcess.textContent = localStorage.getItem('orderQuantity');
+    productProcess.textContent = localStorage.getItem('locStorQuantity');
     var productProcess = document.getElementById('name');
-    productProcess.textContent = localStorage.getItem('custName');
+    productProcess.textContent = localStorage.getItem('locStorCustName');
     var productProcess = document.getElementById('address');
-    productProcess.textContent = localStorage.getItem('custAddress');
+    productProcess.textContent = localStorage.getItem('locStorCustAddress');
     var productProcess = document.getElementById('city');
-    productProcess.textContent = localStorage.getItem('custCity');
+    productProcess.textContent = localStorage.getItem('locStorCustCity');
     var productProcess = document.getElementById('state');
-    productProcess.textContent = localStorage.getItem('custState');
+    productProcess.textContent = localStorage.getItem('locStorCustState');
     var productProcess = document.getElementById('zip');
-    productProcess.textContent = localStorage.getItem('custZip');
+    productProcess.textContent = localStorage.getItem('locStorCustZip');
     var productProcess = document.getElementById('paymentType');
-    productProcess.textContent = localStorage.getItem('custPaymentInfo');
+    productProcess.textContent = localStorage.getItem('locStorCustPaymentType');
 
   });
 }
