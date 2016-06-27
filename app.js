@@ -90,6 +90,12 @@ form.addEventListener('submit', function(event) {
   }
 });
 
+// function buildElement(kind,content,where) {
+//   var dataX = document.createElement(kind);
+//   dataX.textContent = content;
+//   where.appendChild(datax);
+// }
+
 var renderHeaderTable = function() {
   tableData.innerHTML = '';
   var headerRow = document.createElement('tr');

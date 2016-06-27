@@ -187,6 +187,7 @@ section .family {
 
 footer{
   clear: left;
+	margin-bottom: 75px;
 }
 
 .footer h4 {
@@ -195,12 +196,33 @@ footer{
 
 footer ul {
   text-align: center;
-  margin-bottom: 75px;
 }
 
 footer li {
   display: inline;
   margin: 50px;
+  color: hsla(120, 30%, 22%, 0.94);
+  font-size: 18px;
+}
+
+footer li:hover {
+  display: inline;
+  margin: 50px;
+  color: white;
+	cursor: pointer;
+  font-size: 18px;
+}
+
+.clicked {
+  display: block;
+  margin: 5px;
+  color: hsla(120, 30%, 22%, 0.94);
+  font-size: 18px;
+}
+.clicked:hover {
+  display: block;
+  margin: 5px;
+	cursor: default;
   color: hsla(120, 30%, 22%, 0.94);
   font-size: 18px;
 }
