@@ -12,6 +12,7 @@ localStorage.setItem('openOrders',[]);
 
 function Order(productOrdered,quantity,custName,address,city,state,zip,paymentType) {
   // this.order# = i
+  this.orderStatus = open;
   this.productOrdered = productOrdered;
   this.quantity = quantity;
   this.custName = custName;
@@ -19,12 +20,26 @@ function Order(productOrdered,quantity,custName,address,city,state,zip,paymentTy
   this.city = city;
   this.state = state;
   this.zip = zip;
-  this.paymentype = paymentType;
+  this.paymentType = paymentType;
   openOrdersArray.push(this);
 
 }
 
 webpage = wPage.textContent;
+
+var HeaderRowData = ['Order Status','Order #','Product','Quantity','Name','Address','City','State','ZIP Code','Payment Type'];
+
+var renderHeaderRow = function() {
+  var openTable = document.getElementById('open');
+  var tableRow = document.createElement('tr');
+  for(var j = 0; j < HeaderRowData.length; j++) {
+    var openTable = document.getElementById('open');
+    var tableData = document.createElement('td');
+    tableData.textContent = HeaderRowData[j];
+    tableRow.appendChild(tableData);
+  }
+  openTable.appendChild(tableRow);
+};
 
 // GRAB order details form Order page
 if(webpage === 'Store') {
@@ -50,6 +65,9 @@ if(webpage === 'Store') {
     var elInput = document.getElementById('custPaymentType');
     var inputCustPaymentType = elInput.value;
 
+    // CLEAR input fields
+    document.getElementById('orderForm').reset();
+
     var newOrder = new Order(inputProduct, inputQuantity, inputCustName,inputCustAddress,inputCustCity,inputCustState,inputCustZip,inputCustPaymentType);
 
     localStorage.setItem('openOrders', JSON.stringify(openOrdersArray));
@@ -61,21 +79,23 @@ if(webpage === 'Order Processing') {
   var form = document.getElementById('processingForm');
   form.addEventListener('submit', function(event) {
     event.preventDefault();
-    console.log('product2: working');
 
     var orderdata = localStorage.getItem('openOrders');
     var openOrders2 = JSON.parse(orderdata);
 
     var openTable = document.getElementById('open');
+    openTable.innerHTML = '';
+    renderHeaderRow();
 
     for (var i = 0; i < openOrders2.length; i++) {
 
       var tableRow = document.createElement('tr');
       var tableData = document.createElement('td');
       tableData.textContent = 'open';
+      tableData.className = 'openOrder';
       tableRow.appendChild(tableData);
       var tableData = document.createElement('td');
-      tableData.textContent = '#2111';
+      tableData.textContent = '#900' + i;
       tableRow.appendChild(tableData);
       var tableData = document.createElement('td');
       tableData.textContent = openOrders2[i].productOrdered;
@@ -83,24 +103,39 @@ if(webpage === 'Order Processing') {
       var tableData = document.createElement('td');
       tableData.textContent = openOrders2[i].quantity;
       tableRow.appendChild(tableData);
+      tableRow.appendChild(tableData);
+      var tableData = document.createElement('td');
+      tableData.textContent = openOrders2[i].custName;
+      tableRow.appendChild(tableData);
+      var tableData = document.createElement('td');
+      tableData.textContent = openOrders2[i].address;
+      tableRow.appendChild(tableData);
+      var tableData = document.createElement('td');
+      tableData.textContent = openOrders2[i].city;
+      tableRow.appendChild(tableData);
+      var tableData = document.createElement('td');
+      tableData.textContent = openOrders2[i].state;
+      tableRow.appendChild(tableData);
+      var tableData = document.createElement('td');
+      tableData.textContent = openOrders2[i].zip;
+      tableRow.appendChild(tableData);
+      var tableData = document.createElement('td');
+      tableData.textContent = openOrders2[i].paymentType;
+      tableRow.appendChild(tableData);
       openTable.appendChild(tableRow);
-
-      // var productProcess = document.getElementById('name');
-      // productProcess.textContent = openOrders2[i].custName;
-      // var productProcess = document.getElementById('address');
-      // productProcess.textContent = openOrders2[i].address;
-      // var productProcess = document.getElementById('city');
-      // productProcess.textContent = openOrders2[i].city;
-      // var productProcess = document.getElementById('state');
-      // productProcess.textContent = openOrders2[i].state;
-      // var productProcess = document.getElementById('zip');
-      // productProcess.textContent = openOrders2[i].zip;
-      // var productProcess = document.getElementById('paymentType');
-      // productProcess.textContent = openOrders2[i].paymentType;
     }
   });
 
 }
+
+// if(webpage === 'Order Processing') {
+//
+//   var moveOrder = document.getElementsByClass('openOrder');
+//   moveOrder.addEventListener('click', function(event) {
+//     var status = this.setAttribute('id', 'clicked');
+//     var removeRow = document.getElementById('clicked')
+//
+//
 
 // console.log('product1:', localStorage.getItem('locStorProduct'));
 
