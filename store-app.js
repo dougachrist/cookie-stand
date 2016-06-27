@@ -11,10 +11,10 @@ var closedOrdersArray = [];
 
 function Order(productOrdered,quantity,custName,address,city,state,zip,paymentType) {
   // this.order# = i
-  this.productOrdered = productProduct;
+  this.productOrdered = productOrdered;
   this.quantity = quantity;
   this.custName = custName;
-  this.address = adress;
+  this.address = address;
   this.city = city;
   this.state = state;
   this.zip = zip;
@@ -22,8 +22,6 @@ function Order(productOrdered,quantity,custName,address,city,state,zip,paymentTy
   openOrdersArray.push(this);
 
 }
-
-// var newOrder = new Order(product, quantity, custName,custAddress,custCity,custState,custZip,custPaymentInfo);
 
 // set defaults to zero
 localStorage.setItem('productType','');
@@ -39,37 +37,70 @@ if(webpage === 'Store') {
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
-    var elInput = document.getElementById('productInput');
-    inputProduct = elInput.value;
-    var elInput = document.getElementById('productQuantity');
-    inputQuantity = elInput.value;
-    var elInput = document.getElementById('custName');
-    inputCustName = elInput.value;
-    var elInput = document.getElementById('custAddress');
-    inputCustAddress = elInput.value;
-    var elInput = document.getElementById('custCity');
-    inputCustCity = elInput.value;
-    var elInput = document.getElementById('custState');
-    inputCustState = elInput.value;
-    var elInput = document.getElementById('custZip');
-    inputCustZip = elInput.value;
-    var elInput = document.getElementById('custPaymentType');
-    inputCustPaymentType = elInput.value;
 
-    localStorage.setItem('locStorProduct',inputProduct);
-    localStorage.setItem('locStorQuantity',inputQuantity);
-    localStorage.setItem('locStorCustName',inputCustName);
-    localStorage.setItem('locStorCustAddress',inputCustAddress);
-    localStorage.setItem('locStorCustCity',inputCustCity);
-    localStorage.setItem('locStorCustState',inputCustState);
-    localStorage.setItem('locStorCustZip',inputCustZip);
-    localStorage.setItem('locStorCustPaymentType',inputCustPaymentType);
-    // updateOrderProcessing();
-    // console.log('product:',product);
+    var elInput = document.getElementById('productInput');
+    var inputProduct = elInput.value;
+    var elInput = document.getElementById('productQuantity');
+    var inputQuantity = elInput.value;
+    var elInput = document.getElementById('custName');
+    var inputCustName = elInput.value;
+    var elInput = document.getElementById('custAddress');
+    var inputCustAddress = elInput.value;
+    var elInput = document.getElementById('custCity');
+    var inputCustCity = elInput.value;
+    var elInput = document.getElementById('custState');
+    var inputCustState = elInput.value;
+    var elInput = document.getElementById('custZip');
+    var inputCustZip = elInput.value;
+    var elInput = document.getElementById('custPaymentType');
+    var inputCustPaymentType = elInput.value;
+
+    var newOrder = new Order(inputProduct, inputQuantity, inputCustName,inputCustAddress,inputCustCity,inputCustState,inputCustZip,inputCustPaymentType);
+
+    localStorage.setItem('openOrders', JSON.stringify(openOrdersArray));
   });
 }
 
-if (webpage === 'Order Processing') {
+if(webpage === 'Order Processing') {
+
+  var form = document.getElementById('processingForm');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    console.log('product2: working');
+
+    var orderdata = localStorage.getItem('openOrders');
+    var openOrders2 = JSON.parse(orderdata);
+
+    for (var i = 0; i < openOrders2.length; i++) {
+
+      console.log(openOrders2[0].productOrdered);
+      console.log(openOrders2[1].productOrdered);
+
+      var productProcess = document.getElementById('product');
+      productProcess.textContent = openOrders2[i].productOrdered;
+      var productProcess = document.getElementById('quantity');
+      productProcess.textContent = openOrders2[i].quantity;
+      var productProcess = document.getElementById('name');
+      productProcess.textContent = openOrders2[i].custName;
+      var productProcess = document.getElementById('address');
+      productProcess.textContent = openOrders2[i].address;
+      var productProcess = document.getElementById('city');
+      productProcess.textContent = openOrders2[i].city;
+      var productProcess = document.getElementById('state');
+      productProcess.textContent = openOrders2[i].state;
+      var productProcess = document.getElementById('zip');
+      productProcess.textContent = openOrders2[i].zip;
+      var productProcess = document.getElementById('paymentType');
+      productProcess.textContent = openOrders2[i].paymentType;
+    }
+
+  });
+
+}
+
+// console.log('product1:', localStorage.getItem('locStorProduct'));
+
+// if (webpage === 'Order Processing') {
   // var productProcess = document.getElementById('product');
   // productProcess.textContent = localStorage.getItem('productType');
   // var productProcess = document.getElementById('quantity');
@@ -79,32 +110,9 @@ if (webpage === 'Order Processing') {
   // var productProcess = document.getElementById('Address');
   // productProcess.textContent = localStorage.getItem('custAddress');
 
-  var updateSales = document.getElementById('processingForm');
+  // var updateSales = document.getElementById('processingForm');
 
-  updateSales.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    console.log('product:', localStorage.getItem('locStorProduct'));
-
-    var productProcess = document.getElementById('product');
-    productProcess.textContent = localStorage.getItem('locStorProduct');
-    var productProcess = document.getElementById('quantity');
-    productProcess.textContent = localStorage.getItem('locStorQuantity');
-    var productProcess = document.getElementById('name');
-    productProcess.textContent = localStorage.getItem('locStorCustName');
-    var productProcess = document.getElementById('address');
-    productProcess.textContent = localStorage.getItem('locStorCustAddress');
-    var productProcess = document.getElementById('city');
-    productProcess.textContent = localStorage.getItem('locStorCustCity');
-    var productProcess = document.getElementById('state');
-    productProcess.textContent = localStorage.getItem('locStorCustState');
-    var productProcess = document.getElementById('zip');
-    productProcess.textContent = localStorage.getItem('locStorCustZip');
-    var productProcess = document.getElementById('paymentType');
-    productProcess.textContent = localStorage.getItem('locStorCustPaymentType');
-
-  });
-}
+// }
 
 // if (webpage === 'Order Processing') {
 //
