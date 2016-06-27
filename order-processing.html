@@ -14,58 +14,18 @@
     </header>
     <form id="processingForm">
       <fieldset>
-        <input type="submit" value="Update Sales" id="ProcessSubmit">
+        <input type="submit" value="Update Sales" id="processSubmit">
       </fieldset>
     </form>
     <table id="open">
       <tr>
-        <th>Order Status</th>
-        <th>Order #</th>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>ZIP Code</th>
-        <th>Payment Type</th>
-      </tr>
-      <tr class="openOrder">
-        <td>open</td>
-        <td>#23043</td>
-        <td id="product"></td>
-        <td id="quantity"></td>
-        <td id="name"></td>
-        <td id="address"></td>
-        <td id="city"></td>
-        <td id="state"></td>
-        <td id="zip"></td>
-        <td id="paymentType"></td>
-    </table>
+        <td class="openOrder"></td>
+      </tr></table>
     <table id="closed">
       <tr>
-        <th>Order Status</th>
-        <th>Order #</th>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>ZIP Code</th>
-        <th>Payment Type</th>
+        <td class="closedOrder"></td>
       </tr>
-      <tr>
-        <td class="closedOrder">open</td>
-        <td>#23043</td>
-        <td id="closedProduct"></td>
-        <td id="closedQuantity"></td>
-        <td id="closedName"></td>
-        <td id="closedAddress"></td>
-        <td id="closedCity"></td>
-        <td id="closedState"></td>
-        <td id="closedZip"></td>
-        <td id="closedPaymentType"></td>
+    </table>
     <script src="store-app.js"> </script>
   </body>
 </html>

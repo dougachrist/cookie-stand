@@ -11,7 +11,6 @@ function clearData() {
   }
 }
 
-
 var extra = document.getElementById('hours');
 extra.addEventListener('click', function(event) {
   clearData();

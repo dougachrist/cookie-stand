@@ -121,18 +121,28 @@ input {
   background: #e0c891;
   border: 2px solid hsla(120, 30%, 22%, 0.94);
   display: block;
-  /*margin: auto;*/
-  /*margin-right: 200px;*/
   margin-top: 5px;
 }
 
-input #newStoreLocationSubmit {
+#newStoreLocationSubmit {
   display: block;
-  margin: auto;
-  margin-right: 100px;
+  margin-right: 120px;
   margin-top: 5px;
   font-family: Georgia;
 }
+
+#processSubmit {
+	display: block;
+  margin: 0 auto;
+  font-family: Georgia;
+}
+
+#orderSubmit {
+	display: block;
+  margin-left:250px;
+  font-family: Georgia;
+}
+
 
 table {
   margin: 10px auto 10px auto;
