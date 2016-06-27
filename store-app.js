@@ -1,17 +1,14 @@
 // store-app.js
-
 var product = '';
-
 var elInput = '';
-
 var wPage = document.getElementById('page');
-
+webpage = wPage.textContent;
 var openOrdersArray = [];
 var closedOrdersArray = [];
-localStorage.setItem('openOrders',[]);
+// localStorage.setItem('openOrders',[]);
 
 function Order(productOrdered,quantity,custName,address,city,state,zip,paymentType) {
-  // this.order# = i
+
   this.orderStatus = open;
   this.productOrdered = productOrdered;
   this.quantity = quantity;
@@ -22,10 +19,7 @@ function Order(productOrdered,quantity,custName,address,city,state,zip,paymentTy
   this.zip = zip;
   this.paymentType = paymentType;
   openOrdersArray.push(this);
-
 }
-
-webpage = wPage.textContent;
 
 var HeaderRowData = ['Order Status','Order #','Product','Quantity','Name','Address','City','State','ZIP Code','Payment Type'];
 
@@ -41,10 +35,9 @@ var renderHeaderRow = function() {
   openTable.appendChild(tableRow);
 };
 
-// GRAB order details form Order page
+// Pull Order details form Order page
 if(webpage === 'Store') {
   var form = document.getElementById('orderForm');
-
   form.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -75,7 +68,6 @@ if(webpage === 'Store') {
 }
 
 if(webpage === 'Order Processing') {
-
   var form = document.getElementById('processingForm');
   form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -87,7 +79,13 @@ if(webpage === 'Order Processing') {
     openTable.innerHTML = '';
     renderHeaderRow();
 
-    for (var i = 0; i < openOrders2.length; i++) {
+    function buildTd(arrayItem) {
+      var tableData = document.createElement('td');
+      tableData.textContent = arrayItem;
+      tableRow.appendChild(tableData);
+    }
+
+    for(var i = 0; i < openOrders2.length; i++) {
 
       var tableRow = document.createElement('tr');
       var tableData = document.createElement('td');
@@ -97,70 +95,61 @@ if(webpage === 'Order Processing') {
       var tableData = document.createElement('td');
       tableData.textContent = '#900' + i;
       tableRow.appendChild(tableData);
-      var tableData = document.createElement('td');
-      tableData.textContent = openOrders2[i].productOrdered;
-      tableRow.appendChild(tableData);
-      var tableData = document.createElement('td');
-      tableData.textContent = openOrders2[i].quantity;
-      tableRow.appendChild(tableData);
-      tableRow.appendChild(tableData);
-      var tableData = document.createElement('td');
-      tableData.textContent = openOrders2[i].custName;
-      tableRow.appendChild(tableData);
-      var tableData = document.createElement('td');
-      tableData.textContent = openOrders2[i].address;
-      tableRow.appendChild(tableData);
-      var tableData = document.createElement('td');
-      tableData.textContent = openOrders2[i].city;
-      tableRow.appendChild(tableData);
-      var tableData = document.createElement('td');
-      tableData.textContent = openOrders2[i].state;
-      tableRow.appendChild(tableData);
-      var tableData = document.createElement('td');
-      tableData.textContent = openOrders2[i].zip;
-      tableRow.appendChild(tableData);
-      var tableData = document.createElement('td');
-      tableData.textContent = openOrders2[i].paymentType;
-      tableRow.appendChild(tableData);
+      buildTd(openOrders2[i].productOrdered);
+      buildTd(openOrders2[i].quantity);
+      buildTd(openOrders2[i].custName);
+      buildTd(openOrders2[i].address);
+      buildTd(openOrders2[i].city);
+      buildTd(openOrders2[i].state);
+      buildTd(openOrders2[i].zip);
+      buildTd(openOrders2[i].paymentType);
       openTable.appendChild(tableRow);
     }
+
+    // STILL BUILDING CLOSED ORDERS TABLE
+
+    // var closedTable = document.getElementById('closed');
+    // closedTable.innerHTML = '';
+    // // renderHeaderRow();
+    //
+    // for (var i = 0; i < closedOrdersArray.length; i++) {
+    //
+    //   var tableRow = document.createElement('tr');
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = 'closed';
+    //   tableData.className = 'closedOrder';
+    //   tableRow.appendChild(tableData);
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = '#900' + i;
+    //   tableRow.appendChild(tableData);
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = closedOrders[i].productOrdered;
+    //   tableRow.appendChild(tableData);
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = closedOrders[i].quantity;
+    //   tableRow.appendChild(tableData);
+    //   tableRow.appendChild(tableData);
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = closedOrders[i].custName;
+    //   tableRow.appendChild(tableData);
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = closedOrders[i].address;
+    //   tableRow.appendChild(tableData);
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = closedOrders[i].city;
+    //   tableRow.appendChild(tableData);
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = closedOrders[i].state;
+    //   tableRow.appendChild(tableData);
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = closedOrders[i].zip;
+    //   tableRow.appendChild(tableData);
+    //   var tableData = document.createElement('td');
+    //   tableData.textContent = closedOrders[i].paymentType;
+    //   tableRow.appendChild(tableData);
+    //   openTable.appendChild(tableRow);
+    // }
+
   });
 
 }
-
-// if(webpage === 'Order Processing') {
-//
-//   var moveOrder = document.getElementsByClass('openOrder');
-//   moveOrder.addEventListener('click', function(event) {
-//     var status = this.setAttribute('id', 'clicked');
-//     var removeRow = document.getElementById('clicked')
-//
-//
-
-// console.log('product1:', localStorage.getItem('locStorProduct'));
-
-// if (webpage === 'Order Processing') {
-  // var productProcess = document.getElementById('product');
-  // productProcess.textContent = localStorage.getItem('productType');
-  // var productProcess = document.getElementById('quantity');
-  // productProcess.textContent = localStorage.getItem('orderQuantity');
-  // var productProcess = document.getElementById('Name');
-  // productProcess.textContent = localStorage.getItem('custName');
-  // var productProcess = document.getElementById('Address');
-  // productProcess.textContent = localStorage.getItem('custAddress');
-
-  // var updateSales = document.getElementById('processingForm');
-
-// }
-
-// if (webpage === 'Order Processing') {
-//
-//   // var openOrder = document.getElementsById('openOrder');
-  //
-  // openOrder.addEventListener('click', function() {
-  //   move to closed orders array
-
-  // var closedOrder = document.getElementsById('closedOrder');
-
-  // closedOrder.addEventListener('click', function() {
-  //   move back to open orders array
