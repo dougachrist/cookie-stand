@@ -8,6 +8,7 @@ var wPage = document.getElementById('page');
 
 var openOrdersArray = [];
 var closedOrdersArray = [];
+localStorage.setItem('openOrders',[]);
 
 function Order(productOrdered,quantity,custName,address,city,state,zip,paymentType) {
   // this.order# = i
@@ -22,12 +23,6 @@ function Order(productOrdered,quantity,custName,address,city,state,zip,paymentTy
   openOrdersArray.push(this);
 
 }
-
-// set defaults to zero
-localStorage.setItem('productType','');
-localStorage.setItem('orderQuantity','');
-localStorage.setItem('custName','');
-localStorage.setItem('custAddress','');
 
 webpage = wPage.textContent;
 
@@ -71,29 +66,38 @@ if(webpage === 'Order Processing') {
     var orderdata = localStorage.getItem('openOrders');
     var openOrders2 = JSON.parse(orderdata);
 
+    var openTable = document.getElementById('open');
+
     for (var i = 0; i < openOrders2.length; i++) {
 
-      console.log(openOrders2[0].productOrdered);
-      console.log(openOrders2[1].productOrdered);
+      var tableRow = document.createElement('tr');
+      var tableData = document.createElement('td');
+      tableData.textContent = 'open';
+      tableRow.appendChild(tableData);
+      var tableData = document.createElement('td');
+      tableData.textContent = '#2111';
+      tableRow.appendChild(tableData);
+      var tableData = document.createElement('td');
+      tableData.textContent = openOrders2[i].productOrdered;
+      tableRow.appendChild(tableData);
+      var tableData = document.createElement('td');
+      tableData.textContent = openOrders2[i].quantity;
+      tableRow.appendChild(tableData);
+      openTable.appendChild(tableRow);
 
-      var productProcess = document.getElementById('product');
-      productProcess.textContent = openOrders2[i].productOrdered;
-      var productProcess = document.getElementById('quantity');
-      productProcess.textContent = openOrders2[i].quantity;
-      var productProcess = document.getElementById('name');
-      productProcess.textContent = openOrders2[i].custName;
-      var productProcess = document.getElementById('address');
-      productProcess.textContent = openOrders2[i].address;
-      var productProcess = document.getElementById('city');
-      productProcess.textContent = openOrders2[i].city;
-      var productProcess = document.getElementById('state');
-      productProcess.textContent = openOrders2[i].state;
-      var productProcess = document.getElementById('zip');
-      productProcess.textContent = openOrders2[i].zip;
-      var productProcess = document.getElementById('paymentType');
-      productProcess.textContent = openOrders2[i].paymentType;
+      // var productProcess = document.getElementById('name');
+      // productProcess.textContent = openOrders2[i].custName;
+      // var productProcess = document.getElementById('address');
+      // productProcess.textContent = openOrders2[i].address;
+      // var productProcess = document.getElementById('city');
+      // productProcess.textContent = openOrders2[i].city;
+      // var productProcess = document.getElementById('state');
+      // productProcess.textContent = openOrders2[i].state;
+      // var productProcess = document.getElementById('zip');
+      // productProcess.textContent = openOrders2[i].zip;
+      // var productProcess = document.getElementById('paymentType');
+      // productProcess.textContent = openOrders2[i].paymentType;
     }
-
   });
 
 }
